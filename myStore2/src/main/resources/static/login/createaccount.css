@@ -1,0 +1,162 @@
+/* Global Styles */
+* {
+  /* Reset margin and padding for all elements */
+  margin: 0;
+  padding: 0;
+  /* Include padding and border in width and height calculations */
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  /* Set font family for the entire page */
+  font-family: Arial, sans-serif;
+  /* Set background image with a linear gradient */
+  background-image: linear-gradient(to bottom, #3498db, #2ecc71);
+  /* Make background image full-screen */
+  background-size: 100% 100%;
+  /* Fix background image to the viewport */
+  background-attachment: fixed;
+  /* Set height to full viewport height */
+  height: 100vh;
+  /* Remove margin */
+  margin: 0;
+  /* Center content horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Styles */
+.container {
+  /* Set background color and padding for the container */
+  background-color: #fff;
+  padding: 20px;
+  /* Add border radius and box shadow for a nice design */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Set width to 90% of parent and max-width to 400px */
+  width: 90%;
+  max-width: 400px;
+  /* Center container horizontally with margin */
+  margin: 20px auto;
+}
+
+/* Heading Styles */
+h2 {
+  /* Center text horizontally */
+  text-align: center;
+  /* Add margin bottom for spacing */
+  margin-bottom: 20px;
+  /* Set text color */
+  color: #333;
+}
+
+/* Input Group Styles */
+.input-group {
+  /* Set position to relative for absolute positioning of icons */
+  position: relative;
+  /* Add margin bottom for spacing */
+  margin-bottom: 20px;
+}
+
+/* Input Field Styles */
+.input-group input {
+  /* Set width to full parent width */
+  width: 100%;
+  /* Set height and padding for input fields */
+  height: 40px;
+  padding: 10px;
+  padding-right: 40px;
+  /* Add border and border radius */
+  border: solid lightgrey;
+  border-radius: 5px;
+  /* Set background color and box shadow */
+  background-color: #f2f2f2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styles */
+.input-group i {
+  /* Position icon absolutely */
+  position: absolute;
+  /* Set right position and vertical centering */
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  /* Set icon color and cursor */
+  color: #666;
+  cursor: pointer;
+}
+
+/* Eye Icon Styles */
+.input-group i.fa-eye, .input-group i.fa-eye-slash {
+  /* Set right position */
+  right: 10px;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  /* Set width to full parent width */
+  width: 100%;
+  /* Set height and background color */
+  height: 40px;
+  background-color: lightgreen;
+}
+
+/* Responsive Styles */
+
+/* For screens with max-width 768px */
+@media only screen and (max-width: 768px) {
+  .container {
+    /* Reduce padding for smaller screens */
+    padding: 15px;
+  }
+}
+
+/* For screens with max-width 480px */
+@media only screen and (max-width: 480px) {
+  .container {
+    /* Reduce padding for smaller screens */
+    padding: 10px;
+  }
+  h2 {
+    /* Reduce font size for smaller screens */
+    font-size: 18px;
+  }
+  .input-group input {
+    /* Reduce height for smaller screens */
+    height: 35px;
+  }
+  button[type="submit"] {
+    /* Reduce height for smaller screens */
+    height: 35px;
+  }
+}
+
+/* For screens with max-height 600px */
+@media only screen and (max-height: 600px) {
+  body {
+    /* Set height to auto and add padding */
+    height: auto;
+    padding: 20px 0;
+  }
+  .container {
+    /* Add margin top and bottom */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* For screens with max-height 400px */
+@media only screen and (max-height: 400px) {
+  .container {
+    /* Reduce padding for smaller screens */
+    padding: 10px;
+  }
+  h2 {
+    /* Reduce font size and margin bottom */
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+ }

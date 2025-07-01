@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidebar Example</title>
+     <link rel="stylesheet" href="studentTemplate.css">
+        
+</head>
+<body>
+    <button class="open-btn" onclick="document.getElementById('sidebar').style.left = '0'">☰</button>
+    <div class="sidebar" id="sidebar">
+        <h2>CLASSES</h2>
+        <button onclick="document.getElementById('sidebar').style.left = '-250px'">Close</button>
+    </div>
+     <ul>
+            <li><a href="#">Maths</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+        </ul>
+     <div class="hero">
+        <nav>
+            <ul>
+                <li><a href="#">Home:</a></li>
+                <li><a href="#">Classes:</a></li>
+                <li><a href="#">Test:</a></li>
+                <li><a href="#">About Us:</a></li>
+                <li><a href="#">Contact:</a></li>
+            </ul>
+            <img src="../images/1111.jpg" class="user-pic" onclick="toggleMenu()">
+            <!-- PROFILE------------------------------------------------- -->
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="../images/iholuk.jpg">
+                        <h2>Jocomina</h2>
+                    </div>
+                    <!-- add line under profile-->
+                    <hr>
+                    <!-- edit profile links profile-->
+                    <a href="#" class="sub-menu-link">
+                        <img src="..//images/1111.jpg">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="..//images/setting1.png">
+                        <p>Settings and Privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="..//images/help.png">
+                        <p>Help and Suport</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="..//images/logout.png">
+                        <p>LogOut</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    </div>
+
+    <!-- js for hiding and displaying menu -->
+    <script type="text/javascript">
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+        }
+    </script>
+</body>
+</html>

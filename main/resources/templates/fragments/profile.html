@@ -1,0 +1,29 @@
+<div th:fragment="profile-fragment>
+<ul class="navbar-nav me-5" sec:authorize="isAuthenticated">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle p-0 border-0" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<img th:src="@{/profile/picture}"
+								th:onerror="|this.src='/images/1111.jpg'|" alt="Profile Picture"
+								style="width: 43px; height: 40px; border-radius: 50%;">
+						</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/profile"><b>Profile</b>
+										</h5></a></li>
+								<li><a class="dropdown-item" href="/settings">Settings</a></li>
+								<li><a class="dropdown-item" href="/score">Score</a></li>
+								<li><a class="dropdown-item" href="/grading">Grading</a></li>
+								<li>
+									<form th:action="@{/profile/upload-picture}" method="post"
+										enctype="multipart/form-data">
+										<input type="file" name="file" accept="image/*"
+											style="padding: 10px;">
+										<button type="submit" class="btn btn-primary">Upload
+											Profile Picture</button>
+									</form>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					
+					</div>

@@ -1,0 +1,192 @@
+body {
+            background-image: linear-gradient(to left, rgba(0, 0, 139, 0.7), rgba(0, 0, 139, 2)), url('/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+    .offcanvas-body > ul > li > a.toggle-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+
+.offcanvas-body > ul > li > a.toggle-link:hover {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.offcanvas-body > ul > li > a.toggle-link:active, 
+.offcanvas-body > ul > li > a.toggle-link:focus {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.offcanvas-body > ul > li > ul.submenu > li > a.toggle-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+}
+
+.offcanvas-body > ul > li > ul.submenu > li > a.toggle-link:hover {
+    font-size: 18px;
+    color: #007bff;
+}
+
+.offcanvas-body > ul > li > ul.submenu > li > a.toggle-link:active, 
+.offcanvas-body > ul > li > ul.submenu > li > a.toggle-link:focus {
+    font-size: 18px;
+    color: #007bff;
+}
+
+.offcanvas-body > ul > li > ul.submenu > li > ul.submenu > li > label {
+    font-size: 14px;
+    color: #999;
+}
+
+.offcanvas-body > ul > li > ul.submenu > li > ul.submenu > li > label:hover {
+    font-size: 16px;
+    color: #007bff;
+}
+
+.subtopic-checkbox:checked + label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}
+.level{
+background-color: lightblue;
+color:white;
+}
+.submenu {
+  display: none;
+}
+
+.submenu.show {
+  display: block;
+}
+.text-primary{
+padding: center;
+}
+/* .offcanvas-body ul {
+    list-style: none;
+    padding: 0;
+}
+  This will remove the bullet points from all unordered lists within the .offcanvas-body container.  */   
+    
+    
+    /*Maths Chart*/
+    
+    .math-performance {
+    margin-top: 50px;
+    color: white;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: White;
+}
+
+
+
+
+
+
+#message-form {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+#message-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-form input, #message-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#message-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#message-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#message-modal .modal-content {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+#message-modal .modal-header {
+  background-color: #4CAF50;
+  color: #fff;
+  border-bottom: none;
+  padding: 10px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#message-modal .modal-body {
+  padding: 20px;
+}
+
+#message-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-modal input, #message-modal textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#message-modal button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#message-modal button[type="submit"]:hover {
+  background-color: #3e8e41;
+}

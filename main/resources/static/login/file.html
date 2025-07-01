@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="vieport" content="width=device-width, initial-scale=1.0">
+<title>E_learning website</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:ital,
+wght@0,100..900;1,100..900&display=swap"
+	rel="stylesheet">
+<!-- link for font from "font awesome 4 cdn"
+then go to "font awesome icons (v4.7.0) and copy icons link the pest here-->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<section class="header">
+		<nav>
+			<a href="file.html"><img src="../images/logo.png"></a>
+			<div class="nav-links" id="navLinks">
+
+				<!-- search for  "font awesome icon (v4.7.0) close icon"-->
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="file.html">HOME</a></li>
+					<li><a href="file.html">SECONDARY/LEVEL</a></li>
+					<li><a href="file.html">BLOG</a></li>
+					<li><a href="file.html">ABOUT</a></li>
+					<li><a href="file.html">TEST</a></li>
+				</ul>
+			</div>
+
+			<!-- button to display bar options "font awesome icons (v4.7.0) -->
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<div class="text-box">
+			<h1>
+				CONFIDENT<span class="plus" style="text-decoration: underline;">+</span>
+			</h1>
+			<p>Embracing online secondary education opens doors to a world of
+				opportunities! With flexibility, accessibility, and personalized
+				learning, you can achieve your academic goals and unlock your full
+				potential. Stay curious, stay motivated, and take charge of your
+				future - the online world is full of possibilities waiting for you
+				to explore!</p>
+			<a href="login.html" target="_new" class="hero-btn">LogIn</a>
+			<a href="creataccount.html" target="_new" class="hero-btn">Sign Up</a>
+		</div>
+
+	</section>
+	<!------------ java script for toggle menu "closing and showing" ------------------>
+	<script>
+	// this cod creats error "var navLinks = document.getElementById(navLinks);""
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+		function hideMenu() {
+			navLinks.style.right = "-300px";
+		}
+	</script>
+</body>
+</html>

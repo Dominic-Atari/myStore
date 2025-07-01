@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: common-heder">
+
+</head>
+
+
+<body>
+    
+  <div th:replace="fragments/header :: navbar"></div>
+    
+    
+<div sec:authorize="isAuthenticated()">
+    <button class="btn btn-secondary position-fixed start-0" style="top: 50%; transform: translateY(-50%); border: 4px solid white; border-radius: 0px; padding: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <i class="bi bi-list fs-5"></i>
+</button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Classes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <!-- start -->
+        <div class="level">
+        <h4>Secondary 6</h4>
+        </div>
+       <div class="offcanvas-body">
+    <ul>
+        <li>
+            <a href="#" class="toggle-link">Mathematics</a>
+            <ul class="submenu">
+                <li>
+                    <a href="#" class="toggle-link">Algebra</a>
+                    <ul class="submenu">
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Equations</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Inequalities</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="toggle-link">Addition</a>
+                    <ul class="submenu">
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Single-digit addition</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Multi-digit addition</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="toggle-link">Word problems</a>
+                    <ul class="submenu">
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Simple word problems</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" style="border-radius: 50%;" class="subtopic-checkbox">
+                            <label>Complex word problems</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+                <!-- ends -->
+        
+    </div>
+</div>
+<div class="container py-5 text-center">
+    <label class="col-sm-4 col-form-label" style="color: white;">Welcome, <h4>[[${firstName}]]</h4> [[${email}]]</label>
+    
+</div>
+
+
+
+<div sec:authorize="isAuthenticated()" class="container py-5">
+    <div class="math-performance">
+        <h2>Passing Ability</h2>
+        <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 75%;"></div>
+            <span class="progress-text">90%</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- th replace -->
+<div sec:authorize="isAuthenticated()">
+    <div th:replace="fragments/performance-reader :: mathematic-performance-reader">
+</div>
+</div>
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/index-styles.css}">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" th:src="@{/js/style-index.js}"></script>  
+
+<script type="text/javascript">
+//Get the search input field and search results container
+const searchInput = document.getElementById('recipient-search');
+const searchResultsContainer = document.getElementById('search-results');
+
+// Add event listener to search input field
+searchInput.addEventListener('input', function() {
+  const searchQuery = searchInput.value.trim();
+  if (searchQuery !== '') {
+    // Send AJAX request to backend to search for recipients
+    fetch('/search-recipients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: searchQuery })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Display search results
+      const searchResultsHtml = data.map(recipient => `
+        <div class="search-result" data-id="${recipient.id}">
+          <img src="${recipient.profilePicture}" alt="${recipient.firstName} ${recipient.lastName}">
+          <span>${recipient.firstName} ${recipient.lastName}</span>
+        </div>
+      `).join('');
+      searchResultsContainer.innerHTML = searchResultsHtml;
+
+      // Add event listener to search results
+      const searchResults = document.getElementsByClassName('search-result');
+      Array.from(searchResults).forEach(result => {
+        result.addEventListener('click', function() {
+          const recipientId = result.getAttribute('data-id');
+          document.getElementById('recipient-id').value = recipientId;
+          searchResultsContainer.innerHTML = '';
+          searchInput.value = result.querySelector('span').textContent;
+        });
+      });
+    })
+    .catch(error => console.error(error));
+  } else {
+    searchResultsContainer.innerHTML = '';
+  }
+});
+</script>  
+
+</body>
+</html>
+    

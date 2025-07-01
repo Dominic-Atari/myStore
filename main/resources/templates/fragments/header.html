@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head th:fragment="common-heder">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best store</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+	<div th:fragment="navbar">
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container">
+				<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class="bi bi-list"></i>
+            </button> -->
+				<a class="navbar-brand" href="/">Best Store</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link text-dark" href="/">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link text-dark"
+							href="/contact">Contact</a></li>
+					</ul>
+ <a class="nav-link position-relative me-3" href="#">
+    <i class="bi bi-bell fs-5"></i>
+    <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        99+
+    </span> -->
+</a>
+
+<a class="nav-link position-relative me-3" href="#" id="message-icon" data-bs-toggle="modal" data-bs-target="#message-modal">
+  <i class="bi bi-envelope fs-5"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="message-badge">0</span>
+</a>
+<div th:replace="message-modal :: message-modal"></div>
+
+				
+					<!-- Part 2: Offcanvas and User Menu -->
+					<ul class="navbar-nav me-5" sec:authorize="isAuthenticated">
+   
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle p-0 border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img th:src="@{/profile/picture}" th:onerror="|this.src='/images/1111.jpg'|" alt="Profile Picture" style="width: 43px; height: 40px; border-radius: 50%;">
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/#"><b>Profile</b></a></li>
+            <li><a class="dropdown-item" href="/#">Settings</a></li>
+            <li><a class="dropdown-item" href="/#">Score</a></li>
+            <li><a class="dropdown-item" href="/#">Grading</a></li>
+            <li>
+                <form th:action="@{/profile/upload-picture}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*" style="padding: 10px;">
+                    <button type="submit" class="btn btn-primary">Upload Profile Picture</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+					<!-- Login and Log out -->
+					<form sec:authorize="isAuthenticated()" method="post"
+						action="/logout">
+						<input type="hidden" th:name="${_csrf.parameterName}"
+							th:value="${_csrf.token}" />
+						<button type="submit" class="btn btn-danger">Logout</button>
+					</form>
+					<ul class="navbar-nav" sec:authorize="!isAuthenticated()">
+						<li class="nav-item"><a href="/register"
+							class="btn btn-outline-primary me-2">Register</a></li>
+						<li class="nav-item"><a href="/login" class="btn btn-primary">Login</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div><!-- End of navbar fragment -->
+</body>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E_learning website</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=
+Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=notifications" />
+
+<link rel="stylesheet" href="studentTemplate.css">
+<style>
+.sidebar ul ul {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<div class="hero">
+		<nav>
+			<span class="material-symbols-outlined">notifications</span>
+			<img src="../images/1111.jpg" class="user-pic" onclick="toggleMenu()">
+			<!-- PROFILE------------------------------------------------- -->
+			<div class="sub-menu-wrap" id="subMenu">
+				<div class="sub-menu">
+					<div class="user-info">
+						<img src="../images/iholuk.jpg">
+						<h2>Jocomina</h2>
+					</div>
+					<!-- add line under profile-->
+					<hr>
+					<!-- edit profile links profile-->
+					<a href="#" class="sub-menu-link"> <img
+						src="..//images/1111.jpg">
+						<p>Edit Profile</p> <span>></span>
+					</a> <a href="#" class="sub-menu-link"> <img
+						src="..//images/setting1.png">
+						<p>Settings and Privacy</p> <span>></span>
+					</a> <a href="#" class="sub-menu-link"> <img
+						src="..//images/help.png">
+						<p>Help and Suport</p> <span>></span>
+					</a> <a href="#" class="sub-menu-link"> <img
+						src="..//images/logout.png">
+						<p>LogOut</p> <span>></span>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<button class="open-btn" onclick="document.getElementById('sidebar').style.left = '0px'">☰</button>
+	<div class="sidebar" id="sidebar">
+		
+		<span class="material-symbols-sharp" onclick="document.getElementById('sidebar').style.left = '-250px'">cancel</span>
+			
+		
+		<h2>SECONDARY</h2>
+		
+		
+
+
+
+
+		<ul class="class-list">
+			<li><a href="#" class="class-link" id="primary-6-link"
+				onclick="toggleList(this)">Secondary 6</a>
+				<ul class="subject-list" id="primary-6-subjects">
+					<li><a href="#" class="subject-link" id="maths-link"
+						onclick="toggleList(this)">Maths</a>
+						<ul class="topic-list" id="maths-topics">
+							<li><a href="#" class="topic-link" id="algebra-link"
+								onclick="toggleList(this)">>Algebra</a>
+								<ul class="subtopic-list" id="algebra-subtopics">
+									<li><a href="#" class="subtopic-link">Fractions</a></li>
+									<li><a href="#" class="subtopic-link">Decimals</a></li>
+								</ul></li>
+							<!--  -->
+
+
+
+							<!--  -->
+
+						</ul></li>
+
+
+					<li><a href="#" class="subject-link" id="maths-link"
+						onclick="toggleList(this)">English</a>
+						<ul class="topic-list" id="maths-topics">
+							<li><a href="#" class="topic-link" id="algebra-link"
+								onclick="toggleList(this)">>Grammar</a>
+								<ul class="subtopic-list" id="algebra-subtopics">
+									<li><a href="#" class="subtopic-link">Adjectives</a></li>
+									<li><a href="#" class="subtopic-link">Preposition</a></li>
+									<li><a href="#" class="subtopic-link">Noun</a></li>
+									<li><a href="#" class="subtopic-link">Pronoun</a></li>
+								</ul></li>
+
+							<li><a href="#" class="topic-link" id="algebra-link"
+								onclick="toggleList(this)">>Reading and Comprehension Skills</a>
+								<ul class="subtopic-list" id="algebra-subtopics">
+									<li><a href="#" class="subtopic-link">Letter</a></li>
+									<li><a href="#" class="subtopic-link">Composition</a></li>
+									<li><a href="#" class="subtopic-link">Email</a></li>
+									<li><a href="#" class="subtopic-link">Poem</a></li>
+								</ul></li>
+
+							<!-- more subjects here # copy and paste the aboce cord-->
+
+							<li><a href="#" class="subject-link">Science</a></li>
+
+							<!--  -->
+
+						</ul></li>
+				</ul>
+	</div>
+	<!-- js for hiding and displaying menu -->
+	<script type="text/javascript">
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+
+        function toggleList(element) {
+            let list = element.nextElementSibling;
+            if (list.style.display === "block") {
+                list.style.display = "none";
+            } else {
+                list.style.display = "block";
+            }
+        }
+        
+        document.querySelectorAll('#algebra-subtopics li').forEach((item) => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('checked');
+            });
+        });
+    </script>
+</body>
+</html>
